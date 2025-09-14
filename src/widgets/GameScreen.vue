@@ -1,12 +1,11 @@
 <template>
   <div>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
     <div v-for="horse in horses" :key="horse.id" class="mb-4 p-4 border rounded">
       <div
         class="w-16 h-16 rounded-full mb-2"
         :style="{ backgroundColor: horse.color }"
       ></div>
-      <h2 class="text-xl font-semibold mb-2">{{ horse.name }}</h2>
+      <h2>{{ horse.name }}</h2>
       <p>Speed: {{ horse.speed }}</p>
       <p>Position: {{ horse.position }}</p>
       <div class="w-full bg-gray-200 rounded-full h-4 mt-2">
