@@ -5,7 +5,7 @@ export const generateRandomHorseName = (): string => {
 }
 
 export const generateRandomColor = (): string => {
-  return faker.color.rgb({ prefix: '#' });
+  return faker.color.human();
 }
 
 export const generateRandomNumber = (min: number, max: number): number => {
