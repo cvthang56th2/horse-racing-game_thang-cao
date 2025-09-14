@@ -26,7 +26,7 @@ import GameTopActions from './GameTopActions.vue'
 
 const store = useStore()
 
-const horses = computed(() => store.getters['horses/allHorses'])
+const horses = computed(() => store.getters['gameStates/allHorses'])
 </script>
 
 <style scoped>

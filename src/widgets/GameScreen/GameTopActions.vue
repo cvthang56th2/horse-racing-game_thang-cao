@@ -15,7 +15,7 @@ import { useStore } from 'vuex'
 const store = useStore()
 
 const generateHorses = () => {
-  store.dispatch('horses/generateHorses', 20)
+  store.dispatch('gameStates/generateHorses', 20)
 }
 </script>
 

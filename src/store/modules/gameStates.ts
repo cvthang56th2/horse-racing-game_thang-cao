@@ -1,41 +1,41 @@
 import type { Horse } from '@/types'
 import { generateHorses } from '@/shared/lib/utils'
 
-export interface HorsesState {
+export interface GameStatesData {
   horses: Horse[]
   isRacing: boolean
 }
 
 interface ActionContext {
   commit: (mutation: string, payload?: unknown) => void
-  state: HorsesState
+  state: GameStatesData
 }
 
-const horsesModule = {
+const gameStatesModule = {
   namespaced: true,
 
-  state: (): HorsesState => ({
+  state: (): GameStatesData => ({
     horses: [],
     isRacing: false,
   }),
 
   mutations: {
-    SET_HORSES(state: HorsesState, horses: Horse[]) {
+    SET_HORSES(state: GameStatesData, horses: Horse[]) {
       state.horses = horses
     },
 
-    UPDATE_HORSE_POSITION(state: HorsesState, { id, position }: { id: number; position: number }) {
+    UPDATE_HORSE_POSITION(state: GameStatesData, { id, position }: { id: number; position: number }) {
       const horse = state.horses.find((h: Horse) => h.id === id)
       if (horse) {
         horse.position = position
       }
     },
 
-    SET_RACING_STATUS(state: HorsesState, isRacing: boolean) {
+    SET_RACING_STATUS(state: GameStatesData, isRacing: boolean) {
       state.isRacing = isRacing
     },
 
-    RESET_RACE(state: HorsesState) {
+    RESET_RACE(state: GameStatesData) {
       state.horses.forEach((horse: Horse) => {
         horse.position = 0
       })
@@ -67,10 +67,10 @@ const horsesModule = {
   },
 
   getters: {
-    allHorses: (state: HorsesState) => state.horses,
-    isRacing: (state: HorsesState) => state.isRacing,
-    horseCount: (state: HorsesState) => state.horses.length,
-    leader: (state: HorsesState) => {
+    allHorses: (state: GameStatesData) => state.horses,
+    isRacing: (state: GameStatesData) => state.isRacing,
+    horseCount: (state: GameStatesData) => state.horses.length,
+    leader: (state: GameStatesData) => {
       return state.horses.reduce((leader: Horse, horse: Horse) =>
         horse.position > leader.position ? horse : leader
         , state.horses[0] || null)
@@ -78,4 +78,4 @@ const horsesModule = {
   }
 }
 
-export default horsesModule
+export default gameStatesModule
