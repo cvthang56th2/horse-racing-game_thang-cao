@@ -1,5 +1,6 @@
 <template>
   <div>
+    <GameTopActions />
     <div v-for="horse in horses" :key="horse.id" class="mb-4 p-4 border rounded">
       <div
         class="w-16 h-16 rounded-full mb-2"
@@ -19,26 +20,13 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue';
-import { generateRandomColor, generateRandomHorseName, generateRandomNumber  } from '@/shared/lib/utils';
-defineComponent({
-  name: 'GameScreen',
-});
-const uniqueColors = new Set<string>();
-const horses = Array.from({ length: 20 }, (_, index) => {
-  let color;
-  do {
-    color = generateRandomColor();
-  } while (uniqueColors.has(color));
-  uniqueColors.add(color);
-  return {
-    id: index + 1,
-    name: generateRandomHorseName(),
-    speed: generateRandomNumber(40, 100),
-    position: 0,
-    color,
-  };
-});
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import GameTopActions from './GameTopActions.vue'
+
+const store = useStore()
+
+const horses = computed(() => store.getters['horses/allHorses'])
 </script>
 
 <style scoped>
