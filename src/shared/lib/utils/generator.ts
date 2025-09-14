@@ -23,8 +23,7 @@ export const generateHorses = (count: number) => {
     return {
       id: index + 1,
       name: generateRandomHorseName(),
-      speed: generateRandomNumber(40, 100),
-      position: 0,
+      condition: generateRandomNumber(40, 100),
       color,
     };
   });
