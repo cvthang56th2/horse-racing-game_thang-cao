@@ -21,11 +21,12 @@
           </th>
         </tr>
       </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
+      <tbody class="bg-white divide-y divide-gray-400">
         <tr
           v-for="(row, rowIndex) in data"
           :key="getRowKey(row, rowIndex)"
           @click="handleRowClick(row, rowIndex)"
+          class="hover:bg-gray-200 cursor-pointer"
         >
           <td
             v-for="(column, colIndex) in columns"
@@ -42,7 +43,7 @@
               :colIndex="colIndex"
             >
               <div :class="getCellAlignmentClass(column)">
-                {{ formatCellValue(getCellValue(row, column), column) }}
+                {{ formatCellValue(getCellValue(row, column), row, column) }}
               </div>
             </slot>
           </td>
@@ -137,7 +138,7 @@ const headerClasses = computed(() => {
 
 const getColumnClasses = (column: TableColumn) => {
   return cn(
-    'text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-6 py-3',
+    'text-left text-xs font-medium text-gray-500 uppercase tracking-wider px-2 py-1 border-b border-b-gray-400',
     column.class
   )
 }
@@ -168,7 +169,7 @@ const handleRowClick = (row: any, index: number) => {
 
 const getCellClasses = (column: TableColumn) => {
   return cn(
-    'text-sm text-gray-900 whitespace-nowrap px-6 py-4',
+    'text-sm text-gray-900 whitespace-nowrap px-2 py-1',
     column.class
   )
 }
@@ -203,9 +204,9 @@ const getCellAlignmentClass = (column: TableColumn) => {
   return alignmentClasses[column.align || 'left']
 }
 
-const formatCellValue = (value: unknown, column: TableColumn) => {
+const formatCellValue = (value: unknown, row: Record<string, unknown>, column: TableColumn) => {
   if (column.formatter) {
-    return column.formatter(value, value as Record<string, unknown>)
+    return column.formatter(value, row)
   }
   return value?.toString() || ''
 }
