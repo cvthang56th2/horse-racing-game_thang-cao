@@ -37,6 +37,9 @@ const gameStatesModule = {
   }),
 
   mutations: {
+    SET_HORSES(state: GameStatesData, horses: Horse[]) {
+      state.horses = horses
+    },
     SET_PROGRAMS(state: GameStatesData, programs: RaceProgram[]) {
       state.programs = programs
     },
@@ -78,6 +81,10 @@ const gameStatesModule = {
   },
 
   actions: {
+    regenerateHorses({ commit }: ActionContext, horseCount: number = 20) {
+      const newHorses = generateHorses(horseCount)
+      commit('SET_HORSES', newHorses)
+    },
     generateProgram({ commit, state }: ActionContext, programCount: number = 6) {
       if (state.horses.length === 0) {
         return

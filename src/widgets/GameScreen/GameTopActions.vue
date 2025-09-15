@@ -9,13 +9,19 @@
         {{ showHorseList ? '🐴 Hide Horses' : '🐴 Show Horses' }}
       </BaseButton>
       <BaseButton
+        @click="regenerateHorses"
+        class="px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 transition-colors"
+      >
+        🐴 Re-generate Horses
+      </BaseButton>
+      <BaseButton
         @click="generateProgram"
         :class="cn(
           'px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600',
           programs.length === 0 ? 'animate-bounce' : ''
         )"
       >
-        {{ programs.length === 0 ? 'Generate Program' : 'Regenerate Program' }}
+        {{ programs.length === 0 ? 'Generate Program' : 'Re-generate Program' }}
       </BaseButton>
       <BaseButton
         @click="startAllRaces"
@@ -50,7 +56,7 @@ interface Props {
   showHorseList?: boolean
 }
 
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const emit = defineEmits<{
   toggleHorseList: []
@@ -61,6 +67,17 @@ const store = useStore()
 const programs = computed(() => store.getters['gameStates/allPrograms'])
 const isRacing = computed(() => store.getters['gameStates/isRacing'])
 const isPaused = computed(() => store.getters['gameStates/isPaused'])
+
+const regenerateHorses = () => {
+  if (!props.showHorseList) {
+    toggleHorseList()
+  }
+  store.dispatch('gameStates/regenerateHorses', 20)
+  if (programs.value.length) {
+    generateProgram()
+    resetAllRaces()
+  }
+}
 
 const startAllRaces = () => {
   store.dispatch('gameStates/startAllRaces')
