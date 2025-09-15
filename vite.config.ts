@@ -17,4 +17,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // Configure base path for GitHub Pages deployment
+  base: process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES 
+    ? '/horse-racing-game_thang-cao/' 
+    : '/',
 })
