@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div data-testid="horse-list">
     <div class="font-bold mb-4">
       Horse List ({{ horses.length }} horses)
     </div>
@@ -9,6 +9,7 @@
         :data="horses"
         row-key="id"
         :empty-message="'No horses available. Generate horses first.'"
+        data-testid="horse-table"
       >
         <template #cell-color="{ value }">
           <div class="flex items-center justify-center">
