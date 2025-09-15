@@ -249,7 +249,7 @@ const gameStatesModule = {
       }, 100); // Update every 100ms
 
       // Store interval reference for cleanup
-      state.raceIntervals[program.id] = raceInterval;
+      state.raceIntervals[program.id] = raceInterval as unknown as number;
     },
     resetRace({ commit, state }: ActionContext, programId: number) {
       // Clear any running interval
