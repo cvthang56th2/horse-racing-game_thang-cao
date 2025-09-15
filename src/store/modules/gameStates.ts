@@ -1,5 +1,5 @@
 import type { Horse, RaceProgram, RaceResult, LiveRaceResult } from '@/types'
-import { generateHorses } from '@/shared/lib/utils'
+import { generateHorses, generateProgramName } from '@/shared/lib/utils'
 
 export interface GameStatesData {
   horses: Horse[]
@@ -89,6 +89,7 @@ const gameStatesModule = {
 
         return {
           id: index + 1,
+          name: generateProgramName(index),
           distance: 1200 + index * 200, // Example distances: 1000m, 1200m, 1400m, etc.
           horses: programHorses
         }

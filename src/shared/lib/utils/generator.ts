@@ -45,3 +45,17 @@ export const generateHorses = (count: number) => {
     };
   });
 }
+
+export const generateProgramName = (index: number): string => {
+  const distance = 1200 + index * 200
+  switch (index) {
+    case 0:
+      return `1.st Lap ${distance}m`
+    case 1:
+      return `2.nd Lap ${distance}m`
+    case 2:
+      return `3.rd Lap ${distance}m`
+    default:
+      return `${index + 1}th Lap ${distance}m`
+  }
+}

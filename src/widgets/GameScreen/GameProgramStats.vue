@@ -1,7 +1,7 @@
 <template>
   <div class="space-y-4">
     <div>
-      <h4 class="text-sm font-semibold mb-2 text-gray-700">Program {{ program.id }}</h4>
+      <h4 class="text-sm font-semibold mb-2 text-gray-700">Program</h4>
       <BaseTable
         :columns="raceProgramColumns"
         :data="program.horses.map((horse, index) => ({ ...horse, position: index + 1 }))"
@@ -88,15 +88,15 @@ const getResultsTitle = (programId: number): string => {
   const liveResult = liveResults.value.find((result: LiveRaceResult) => result.programId === programId);
 
   if (liveResult && isRacing.value) {
-    return `🔴 Live Results ${programId}`;
+    return `🔴 Live Results`;
   }
 
   const finalResult = results.value.find((result: RaceResult) => result.programId === programId);
   if (finalResult) {
-    return `🏆 Final Results ${programId}`;
+    return `🏆 Final Results`;
   }
 
-  return `Results ${programId}`;
+  return `Results`;
 };
 
 const getLiveResultsClass = (programId: number): string => {

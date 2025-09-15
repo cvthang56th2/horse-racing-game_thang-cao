@@ -18,7 +18,7 @@
           <!-- Horse container with animation -->
           <div
             class="absolute top-1/2 transform -translate-y-1/2 transition-all duration-100 ease-linear z-20"
-            :style="{ left: `${horsePositions[`${program.id}-${horse.id}`] || 0}%` }"
+            :style="{ left: `${Math.min(95, horsePositions[`${program.id}-${horse.id}`] || 0)}%` }"
           >
             <RaceHorse
               :horse="horse"

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
+  <div class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 border-b pb-4">
     <h1 class="text-2xl font-bold">Horse Racing Game</h1>
     <div class="flex gap-4 flex-wrap">
       <BaseButton

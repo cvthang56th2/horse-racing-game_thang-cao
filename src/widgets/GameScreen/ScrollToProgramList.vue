@@ -5,7 +5,7 @@
         :href="`#program-${program.id}`"
         class="block px-3 py-1 text-sm text-blue-600 hover:underline"
       >
-        Program {{ program.id }}
+        {{  program.name  }}
       </a>
     </div>
   </div>

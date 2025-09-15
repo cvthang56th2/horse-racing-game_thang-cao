@@ -26,7 +26,7 @@
           v-for="(row, rowIndex) in data"
           :key="getRowKey(row, rowIndex)"
           @click="handleRowClick(row, rowIndex)"
-          class="hover:bg-gray-200 cursor-pointer"
+          class="hover:bg-gray-200"
         >
           <td
             v-for="(column, colIndex) in columns"
