@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import GameScreen from '@/widgets/GameScreen/GameScreen.vue';
+import GameScreen from '@/components/GameScreen/GameScreen.vue';
 
 </script>
 

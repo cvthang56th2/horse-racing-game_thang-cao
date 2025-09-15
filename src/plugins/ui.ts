@@ -1,5 +1,5 @@
 import type { App } from 'vue'
-import * as UIComponents from '@/shared/components/ui'
+import * as UIComponents from '@/components/ui'
 
 export default {
   install(app: App) {

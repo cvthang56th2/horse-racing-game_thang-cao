@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from '@/shared/lib/utils'
+import { cn } from '@/utils'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 

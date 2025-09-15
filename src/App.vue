@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DefaultLayout from '@/layout/DefaultLayout.vue';
-import HomePage from '@/pages/HomePage.vue';
+import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import HomePage from '@/views/HomePage.vue';
 
 </script>
 

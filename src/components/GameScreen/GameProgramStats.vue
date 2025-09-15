@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseTable from '@/shared/components/ui/BaseTable.vue';
+import BaseTable from '@/components/ui/BaseTable.vue';
 import type { Horse, RaceProgram, RaceResult, LiveRaceResult } from '@/types';
 import { defineProps, computed } from 'vue';
 import { useStore } from 'vuex';

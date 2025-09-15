@@ -1,6 +1,6 @@
 @import "tailwindcss";
-@import "../assets/styles/utilities.css";
-@import "../assets/styles/components.css";
+@import "./utilities.css";
+@import "./components.css";
 
 /* Custom CSS Variables */
 :root {

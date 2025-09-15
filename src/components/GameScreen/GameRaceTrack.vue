@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import RaceHorse from '@/widgets/GameScreen/RaceHorse/RaceHorse.vue';
+import RaceHorse from '@/components/GameScreen/RaceHorse/RaceHorse.vue';
 import { computed, defineProps } from 'vue';
 import { useStore } from 'vuex';
 

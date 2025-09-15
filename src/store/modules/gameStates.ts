@@ -1,5 +1,5 @@
 import type { Horse, RaceProgram, RaceResult, LiveRaceResult } from '@/types'
-import { generateHorses, generateProgramName } from '@/shared/lib/utils'
+import { generateHorses, generateProgramName } from '@/utils'
 
 export interface GameStatesData {
   horses: Horse[]
