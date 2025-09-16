@@ -7,7 +7,12 @@ An interactive horse racing simulation game built with Vue 3, TypeScript, and Vi
 **🌐 [Play the Game Live](https://cvthang56th2.github.io/horse-racing-game_thang-cao/)**
 
 ### 🎥 Demo Video
-> *Demo video coming soon - showcasing gameplay, race simulations, and key features*
+<video width="100%" controls>
+  <source src="https://cvthang56th2.github.io/horse-racing-game_thang-cao/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+> *Watch the complete gameplay demonstration showcasing horse generation, race simulation, and live results*
 
 ## 🌟 Features
 
@@ -246,6 +251,44 @@ The game uses Vuex with modules:
 - Firefox
 - Safari
 - Edge
+
+## ⏱️ Development Timeline
+
+**Total Time Invested**: ~24 hours
+
+### 📊 Time Breakdown
+- **🏗️ Initial Setup & Configuration** (2h hours)
+  - Project scaffolding with Vite + Vue 3
+  - TypeScript configuration
+  - Tailwind CSS setup
+  - Testing framework setup (Vitest + Playwright)
+  - ESLint & Prettier configuration
+
+- **🎮 Core Game Development** (12 hours)
+  - Game state management with Vuex
+  - Horse generation algorithm
+  - Race simulation logic
+  - Real-time position tracking
+  - Live results system
+
+- **🎨 UI/UX Development** (4 hours)
+  - Component design and layout
+  - Responsive design implementation
+  - Horse animation with SVG
+  - Race track visualization
+  - Control interface
+
+- **🧪 Testing & Quality Assurance** (4 hours)
+  - Unit test implementation
+  - E2E test scenarios
+  - Bug fixes and performance optimization
+  - Cross-browser testing
+
+- **🚀 Deployment & Documentation** (2 hours)
+  - GitHub Pages deployment configuration
+  - CI/CD pipeline setup
+  - README documentation
+  - Live demo setup and testing
 
 ---
 
