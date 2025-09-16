@@ -205,7 +205,7 @@ npm run format
 ## 🎲 Game Mechanics
 
 ### Horse Generation
-- Each horse has a unique name, color, and condition (0-100%)
+- Each horse has a unique name, color, and condition (1-100%)
 - Horse condition affects racing performance
 - Higher condition = faster average speed
 
@@ -218,7 +218,7 @@ npm run format
 ### Results System
 - **Live Results**: Updated during races with current positions
 - **Final Results**: Stored after race completion
-- **Position Tracking**: Real-time horse position on track (0-100%)
+- **Position Tracking**: Real-time horse position on track (1-100%)
 
 ## 🛠️ Development Notes
 
