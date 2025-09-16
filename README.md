@@ -7,10 +7,7 @@ An interactive horse racing simulation game built with Vue 3, TypeScript, and Vi
 **🌐 [Play the Game Live](https://cvthang56th2.github.io/horse-racing-game_thang-cao/)**
 
 ### 🎥 Demo Video
-<video width="100%" controls>
-  <source src="https://cvthang56th2.github.io/horse-racing-game_thang-cao/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Demo Video](https://img.shields.io/badge/▶️-Watch%20Demo-red?style=for-the-badge)](https://cvthang56th2.github.io/horse-racing-game_thang-cao/demo.mp4)
 
 > *Watch the complete gameplay demonstration showcasing horse generation, race simulation, and live results*
 
